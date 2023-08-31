@@ -8,7 +8,7 @@ app.get('/books',(req,res)=>
   res.send({
 
     name : "Introduction to Nodejs",
-    author : "Abdirahman",
+    author : "mohamed abuukar ali",
     date : "30--8-2023"
   })
 })
