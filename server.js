@@ -13,6 +13,17 @@ app.get('/books',(req,res)=>
   })
 })
 
+
+app.post('/send',(req,res)=>
+{
+  console.log(req.body)
+  res.send({
+
+    batchId: "e4e2e063-a31c-42b7-b6d0-a9837273bec6",
+    messageCount: 6
+  })
+})
+
 app.listen(3000,() =>{
   console.log('labarary application is listering port 3000')
 
