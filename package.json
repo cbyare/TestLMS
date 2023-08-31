@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "smsservice": "nodemon app.js"
   },
   "author": "Abdirahman",
   "license": "ISC",
