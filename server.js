@@ -8,12 +8,12 @@ app.get('/books',(req,res)=>
   res.send({
 
     name : "Introduction to Nodejs",
-    author : "Abdirahman",
+    author : "Basraam",
     date : "30--8-2023"
   })
 })
 
-
+// NODE JS + EXPRESS[FRAMEWORK] + SQL SERVER --- a complete stack
 
 app.post('/send',(req,res)=>
 {
