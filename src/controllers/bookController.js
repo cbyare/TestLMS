@@ -31,15 +31,26 @@ exports.getbooks = async (req,res) => {
 }
 
 
-exports.createBook=(req,res)=>
+exports.createBook= async(req,res)=>
 {
     try
     {
-        books.push(req.body)
+        const{bookname,date_published}=req.body
+        await pool.connect();
+
+        const result = await pool.request()
+            .input('BookName',bookname)
+            .input('DatePublished',date_published)
+            .execute(`createBook`);
+
+        console.log(result.rowsAffected[0])
+        if(result.rowsAffected[0]!=1) res.send({message : "book can not be registered !"})
+
+        
   res.send(
     {
         message : "book is succesfull registered",
-        data : req.body
+        data : {bookname :bookname,date_published:date_published}
     }
   )
         
