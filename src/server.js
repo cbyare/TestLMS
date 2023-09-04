@@ -1,8 +1,10 @@
 const express =  require('express')
 const bodyParser = require('body-parser')
+require('dotenv').config();
+
+
 const path =  require('path')
 const app = express()
-
 app.set("view engine", "pug");
 app.use(bodyParser.json())
 app.use('/api/books',require('../src/routes/Books/book'))
@@ -40,4 +42,5 @@ app.get('/',(req,res)=>
 
 app.listen(3000,() =>{
   console.log('labarary application is listering port 3000')
+  console.log(process.env.DATABASE)
 })
